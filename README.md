@@ -18,3 +18,32 @@ This system allows users to:
 - Explore random songs from the dataset  
 
 The project is built using Python and works entirely in the terminal, making it lightweight and easy to run.
+
+Features
+
+-  Search songs by name or artist  
+-  View detailed song information  
+-  Get similar song recommendations  
+-  Mood-based song suggestions (happy, sad, chill, party)  
+-  Random song generator  
+-  Fast and lightweight terminal interface
+
+  tech Stack
+
+- Python  
+- Pandas  
+- CSV Dataset (Spotify songs data)  
+
+
+
+#Requirements
+
+Make sure you have the following installed:
+
+- Python 3.x  
+- pip  
+
+Install required libraries:
+
+```bash
+pip install pandas
