@@ -1,13 +1,13 @@
 import pandas as pd
 import random
 
-# ===== LOAD DATA =====
+#THIS LOADS THE CLEANED DATASET FROM THE CSV FILE INTO A PANDAS DATAFRAME.
 df = pd.read_csv("src/spotify_data_clean.csv")
 
-# Normalize columns
+# Normalize column namres
 df.columns = [col.strip().lower() for col in df.columns]
 
-# Column mapping
+#Column names to use in the code
 TRACK = "track_name"
 ARTIST = "artist_name"
 ALBUM = "album_name"
@@ -15,7 +15,7 @@ DURATION = "track_duration_min"
 POPULARITY = "track_popularity"
 
 
-# ===== FUNCTIONS =====
+#search for songs or artists that match the query
 
 def search_song_or_artist(query):
     query = query.lower()
@@ -31,7 +31,7 @@ def search_song_or_artist(query):
         print("\n🔍 Results:")
         print(results[[TRACK, ARTIST]].head(10))
 
-
+#get detailed info about a specific song by its exact name
 def get_song_info(song):
     song = song.lower()
 
@@ -48,7 +48,7 @@ def get_song_info(song):
         print(f"Duration : {row[DURATION]} mins")
         print(f"Popularity: {row[POPULARITY]}")
 
-
+#based on a given song, recommend similar songs using simple heuristics like same artist, same album, or similar popularity.
 def recommend_similar(song):
     song = song.lower()
 
@@ -60,7 +60,7 @@ def recommend_similar(song):
 
     base = base.iloc[0]
 
-    # Strategy:
+    
     # Same artist OR same album OR similar popularity
     same_artist = df[df[ARTIST] == base[ARTIST]]
     same_album = df[df[ALBUM] == base[ALBUM]]
@@ -77,8 +77,7 @@ def recommend_similar(song):
 
 def recommend_by_mood(mood):
     mood = mood.lower()
-
-    # Since no mood features, we simulate mood using popularity
+    #this works base on the popularity of the songs.
     if mood == "sad":
         filtered = df[df[POPULARITY] < 40]
     elif mood == "happy":
@@ -101,7 +100,7 @@ def recommend_by_mood(mood):
     for _, row in sample.iterrows():
         print(f"{row[TRACK]} - {row[ARTIST]}")
 
-
+# uses random to give random set of songs from the dataset.
 def random_songs():
     sample = df.sample(min(10, len(df)))
 
@@ -110,7 +109,7 @@ def random_songs():
         print(f"{row[TRACK]} - {row[ARTIST]}")
 
 
-# ===== MAIN =====
+# main function to run the command line interface for the music recommender system.
 
 def main():
     while True:
