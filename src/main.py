@@ -4,10 +4,10 @@ import random
 #THIS LOADS THE CLEANED DATASET FROM THE CSV FILE INTO A PANDAS DATAFRAME.
 df = pd.read_csv("src/spotify_data_clean.csv")
 
-# Normalize column namres
+# Normalize column names
 df.columns = [col.strip().lower() for col in df.columns]
 
-#Column names to use in the code
+# Column names to use in the code
 TRACK = "track_name"
 ARTIST = "artist_name"
 ALBUM = "album_name"
@@ -32,6 +32,7 @@ def search_song_or_artist(query):
         print(results[[TRACK, ARTIST]].head(10))
 
 #get detailed info about a specific song by its exact name
+
 def get_song_info(song):
     song = song.lower()
 
@@ -60,7 +61,7 @@ def recommend_similar(song):
 
     base = base.iloc[0]
 
-    
+
     # Same artist OR same album OR similar popularity
     same_artist = df[df[ARTIST] == base[ARTIST]]
     same_album = df[df[ALBUM] == base[ALBUM]]
@@ -77,6 +78,7 @@ def recommend_similar(song):
 
 def recommend_by_mood(mood):
     mood = mood.lower()
+
     #this works base on the popularity of the songs.
     if mood == "sad":
         filtered = df[df[POPULARITY] < 40]
@@ -104,12 +106,12 @@ def recommend_by_mood(mood):
 def random_songs():
     sample = df.sample(min(10, len(df)))
 
-    print("\n🎲 Random Songs:")
+    print("\n Random Songs:")
     for _, row in sample.iterrows():
         print(f"{row[TRACK]} - {row[ARTIST]}")
 
 
-# main function to run the command line interface for the music recommender system.
+#main function to run the command line interface for the music recommender system.
 
 def main():
     while True:

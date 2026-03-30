@@ -62,7 +62,7 @@ cd music-recommender-system/src
 RUN THE PROGRAM
 
 USAGE
-OUTPUT AFTER RUNNING THe CODE
+OUTPUT AFTER RUNNING TH CODE
 ====== MUSIC RECOMMENDER ======
 1. Search song/artist
 2. Get song info
@@ -79,11 +79,6 @@ Found 3 songs:
 1. Shape of You - Ed Sheeran
 2. Shape of My Heart - Sting
 3. Thinking Out Loud - Ed Sheeran
-
-<img width="940" height="629" alt="image_2026-03-30_234352545" src="https://github.com/user-attachments/assets/e73612bb-231d-47bb-ae15-6b1272f722ae" />
-<img width="940" height="629" alt="image_2026-03-30_234352545" src="https://github.com/user-attachments/assets/e73612bb-231d-47bb-ae15-6b1272f722ae" />
-<img width="940" height="629" alt="image" src="https://github.com/user-attachments/assets/629e1ec1-aac5-4109-8a29-78a5a70a212c" />
-<img width="940" height="629" alt="image" src="https://github.com/user-attachments/assets/629e1ec1-aac5-4109-8a29-78a5a70a212c" />
 
 
 Project Structure
@@ -102,4 +97,6 @@ Future Improvements
 Add support for Hindi and multilingual songs
 Integrate Spotify API for real-time recommendations
 Build a web interface using Flask or Streamlit
-Improve recommendation accuracy using ML models
+
+
+
