@@ -47,3 +47,53 @@ Install required libraries:
 
 ```bash
 pip install pandas
+
+
+## ▶️ How to Run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/shauryathapa/music-recommender-system.git
+
+Navigate to project folder
+cd music-recommender-system/src
+
+RUN THE PROGRAM
+
+USAGE
+OUTPUT AFTER RUNNING TH CODE
+====== MUSIC RECOMMENDER ======
+1. Search song/artist
+2. Get song info
+3. Recommend similar songs
+4. Mood-based songs
+5. Random songs
+6. Exit
+
+Example output
+Enter choice: 1
+Enter song name: Shape of You
+
+Found 3 songs:
+1. Shape of You - Ed Sheeran
+2. Shape of My Heart - Sting
+3. Thinking Out Loud - Ed Sheeran
+
+Project Structure
+music-recommender-system/
+│
+├── src/
+│   ├── main.py
+│   └── spotify_data_clean.csv
+│
+├── README.md
+├── .gitignore
+└── LICENSE
+
+
+Future Improvements
+Add support for Hindi and multilingual songs
+Integrate Spotify API for real-time recommendations
+Build a web interface using Flask or Streamlit
+Improve recommendation accuracy using ML models
